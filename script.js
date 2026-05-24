@@ -110,3 +110,62 @@ const pbContactObserver = new IntersectionObserver(
 pbContactRevealItems.forEach(function (item) {
   pbContactObserver.observe(item);
 });
+
+
+
+/* =========================
+   Premium Hero Animation JS
+========================= */
+
+const pbHeroRevealItems = document.querySelectorAll(".pb-hero-reveal");
+
+const pbHeroRevealObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("pb-show");
+      }
+    });
+  },
+  {
+    threshold: 0.14
+  }
+);
+
+pbHeroRevealItems.forEach(function (item) {
+  pbHeroRevealObserver.observe(item);
+});
+
+
+/* =========================
+   Premium Hero Image Hover Effect JS
+========================= */
+
+const pbHeroImageShell = document.querySelector(".pb-hero-image-shell");
+
+if (pbHeroImageShell) {
+  pbHeroImageShell.addEventListener("mousemove", function (event) {
+    if (window.innerWidth <= 991) return;
+
+    const rect = pbHeroImageShell.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - 0.5) * 5;
+    const rotateX = ((y / rect.height) - 0.5) * -5;
+
+    pbHeroImageShell.style.transform =
+      `perspective(1100px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+    pbHeroImageShell.style.setProperty("--hero-x", `${(x / rect.width) * 100}%`);
+    pbHeroImageShell.style.setProperty("--hero-y", `${(y / rect.height) * 100}%`);
+  });
+
+  pbHeroImageShell.addEventListener("mouseleave", function () {
+    pbHeroImageShell.style.transform =
+      "perspective(1100px) rotateX(0deg) rotateY(0deg)";
+
+    pbHeroImageShell.style.setProperty("--hero-x", "50%");
+    pbHeroImageShell.style.setProperty("--hero-y", "50%");
+  });
+}
