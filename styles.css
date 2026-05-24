@@ -996,14 +996,14 @@ ul {
   }
 
   .pb-footer-big-text-wrap {
-    padding: 0 14px;
+    padding: 0 0px;
   }
 
   .pb-footer-big-text {
     font-size: clamp(52px, 18vw, 88px);
     letter-spacing: 2px;
     line-height: 0.9;
-    font-size:65px;
+    font-size:71px;
   }
 }
 
