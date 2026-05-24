@@ -1,0 +1,112 @@
+/* =========================
+   Header JS
+========================= */
+
+const pbMenuBtn = document.querySelector(".pb-mobile-menu-btn");
+const pbSidebar = document.querySelector(".pb-mobile-sidebar");
+const pbOverlay = document.querySelector(".pb-menu-overlay");
+const pbCloseBtn = document.querySelector(".pb-sidebar-close");
+
+function openPbSidebar() {
+  pbSidebar.classList.add("active");
+  pbOverlay.classList.add("active");
+  pbMenuBtn.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closePbSidebar() {
+  pbSidebar.classList.remove("active");
+  pbOverlay.classList.remove("active");
+  pbMenuBtn.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+pbMenuBtn.addEventListener("click", function () {
+  if (pbSidebar.classList.contains("active")) {
+    closePbSidebar();
+  } else {
+    openPbSidebar();
+  }
+});
+
+pbOverlay.addEventListener("click", closePbSidebar);
+pbCloseBtn.addEventListener("click", closePbSidebar);
+
+document.querySelectorAll(".pb-mobile-nav a").forEach(function (link) {
+  link.addEventListener("click", closePbSidebar);
+});
+
+
+
+/* =========================
+   Footer Animation JS
+========================= */
+
+const pbFooterItems = document.querySelectorAll(".pb-footer-animate");
+
+const pbFooterObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("pb-show");
+      }
+    });
+  },
+  {
+    threshold: 0.18
+  }
+);
+
+pbFooterItems.forEach(function (item) {
+  pbFooterObserver.observe(item);
+});
+
+
+
+/* =========================
+   Footer Big Text Animation JS
+========================= */
+
+const pbBigFooterText = document.querySelector(".pb-footer-big-text");
+
+if (pbBigFooterText) {
+  const pbBigTextObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("pb-show");
+        }
+      });
+    },
+    {
+      threshold: 0.25
+    }
+  );
+
+  pbBigTextObserver.observe(pbBigFooterText);
+}
+
+
+
+/* =========================
+   Contact Section Animation JS
+========================= */
+
+const pbContactRevealItems = document.querySelectorAll(".pb-contact-reveal");
+
+const pbContactObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("pb-show");
+      }
+    });
+  },
+  {
+    threshold: 0.18
+  }
+);
+
+pbContactRevealItems.forEach(function (item) {
+  pbContactObserver.observe(item);
+});
