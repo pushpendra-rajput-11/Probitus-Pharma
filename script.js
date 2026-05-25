@@ -206,3 +206,129 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
+/* =========================
+   Product Categories Animation JS
+========================= */
+
+const pbCategoryRevealItems = document.querySelectorAll(".pb-cat-reveal");
+
+const pbCategoryObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("pb-show");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+pbCategoryRevealItems.forEach(function (item) {
+  pbCategoryObserver.observe(item);
+});
+
+
+
+/* =========================
+   Why Choose Us Smooth Animation JS
+========================= */
+
+const pbWhyRevealItems = document.querySelectorAll(".pb-why-reveal");
+
+const pbWhyObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("pb-show");
+      }
+    });
+  },
+  {
+    threshold: 0.16
+  }
+);
+
+pbWhyRevealItems.forEach(function (item) {
+  pbWhyObserver.observe(item);
+});
+
+
+/* =========================
+   Why Choose Us Card Glow Effect
+========================= */
+
+document.querySelectorAll(".pb-why-card").forEach(function (card) {
+  const glow = document.createElement("span");
+  glow.classList.add("pb-why-card-glow");
+  card.prepend(glow);
+
+  card.addEventListener("mousemove", function (event) {
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    card.style.setProperty("--why-x", `${(x / rect.width) * 100}%`);
+    card.style.setProperty("--why-y", `${(y / rect.height) * 100}%`);
+  });
+
+  card.addEventListener("mouseleave", function () {
+    card.style.setProperty("--why-x", "50%");
+    card.style.setProperty("--why-y", "50%");
+  });
+});
+
+
+/* =========================
+   Why Choose Us Image Parallax
+========================= */
+
+const pbWhyImageWrap = document.querySelector(".pb-why-image-wrap");
+
+if (pbWhyImageWrap) {
+  pbWhyImageWrap.addEventListener("mousemove", function (event) {
+    if (window.innerWidth <= 991) return;
+
+    const rect = pbWhyImageWrap.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - 0.5) * 7;
+    const rotateX = ((y / rect.height) - 0.5) * -7;
+
+    pbWhyImageWrap.style.transform =
+      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  pbWhyImageWrap.addEventListener("mouseleave", function () {
+    pbWhyImageWrap.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+  });
+}
+
+
+/* =========================
+   Certification Animation JS
+========================= */
+
+const pbCertRevealItems = document.querySelectorAll(".pb-cert-reveal");
+
+const pbCertObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("pb-show");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+pbCertRevealItems.forEach(function (item) {
+  pbCertObserver.observe(item);
+});

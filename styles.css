@@ -2910,3 +2910,1644 @@ ul {
     bottom: 15px;
   }
 }
+
+
+
+/* =========================
+   Product Categories CSS
+========================= */
+
+.pb-categories-section {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0 110px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(215, 25, 75, 0.055), transparent 25%),
+    radial-gradient(circle at 88% 14%, rgba(0, 116, 173, 0.08), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f7fcff 48%, #ffffff 100%);
+}
+
+.pb-categories-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 116, 173, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 116, 173, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at 50% 40%, black, transparent 75%);
+  pointer-events: none;
+}
+
+.pb-categories-bg-text {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(70px, 13vw, 170px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 116, 173, 0.08);
+  background: linear-gradient(90deg, rgba(215, 25, 75, 0.07), rgba(0, 116, 173, 0.09));
+  -webkit-background-clip: text;
+  background-clip: text;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pb-categories-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 34px;
+}
+
+.pb-categories-heading {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.pb-categories-heading span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+  padding: 9px 17px;
+  border-radius: 999px;
+  background: rgba(0, 116, 173, 0.085);
+  color: #0074ad;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.pb-categories-heading span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d7194b;
+  box-shadow: 0 0 0 6px rgba(215, 25, 75, 0.12);
+}
+
+.pb-categories-heading h2 {
+  margin-bottom: 14px;
+  color: #07131c;
+  font-size: clamp(38px, 4.2vw, 58px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -1.6px;
+}
+
+.pb-categories-heading p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #40515d;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   Product Categories Grid CSS
+========================= */
+
+.pb-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 28px;
+}
+
+.pb-category-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 330px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.75), transparent 26%),
+    linear-gradient(135deg, #c8edff 0%, #aee2fb 100%);
+  border: 1px solid rgba(0, 116, 173, 0.10);
+  box-shadow: 0 20px 45px rgba(0, 80, 125, 0.08);
+  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.pb-category-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(215, 25, 75, 0.08), transparent 40%),
+    linear-gradient(315deg, rgba(0, 116, 173, 0.12), transparent 42%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.pb-category-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(0, 116, 173, 0.24);
+  box-shadow: 0 34px 70px rgba(0, 80, 125, 0.16);
+}
+
+.pb-category-card:hover::before {
+  opacity: 1;
+}
+
+.pb-category-small {
+  grid-column: span 3;
+}
+
+.pb-category-wide {
+  grid-column: span 6;
+}
+
+.pb-category-content {
+  position: relative;
+  z-index: 4;
+  padding: 32px 30px;
+}
+
+.pb-category-content p {
+  margin-bottom: 7px;
+  color: #a0144a;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.pb-category-content h3 {
+  max-width: 320px;
+  color: #07131c;
+  font-size: clamp(26px, 2.2vw, 36px);
+  line-height: 1.02;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.pb-category-h3{
+    font-size: 24px !important;
+
+}
+.pb-category-img {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  transition: transform 0.55s ease, filter 0.55s ease;
+  filter: drop-shadow(0 18px 24px rgba(0, 80, 125, 0.14));
+}
+
+.pb-category-card:hover .pb-category-img {
+  transform: translateY(-10px) scale(1.045);
+  filter: drop-shadow(0 26px 30px rgba(0, 80, 125, 0.20));
+}
+
+
+/* =========================
+   Individual Product Image Position
+========================= */
+
+.pb-cat-tablets .pb-category-img {
+  width: 78%;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+}
+
+.pb-cat-tablets:hover .pb-category-img {
+  transform: translateX(-50%) translateY(-10px) scale(1.045);
+}
+
+.pb-cat-capsules .pb-category-img {
+  width: 86%;
+  left: 50%;
+  bottom: 72px;
+  transform: translateX(-50%);
+}
+
+.pb-cat-capsules:hover .pb-category-img {
+  transform: translateX(-50%) translateY(-10px) scale(1.045);
+}
+
+.pb-cat-syrups .pb-category-img {
+  width: 55%;
+  right: 28px;
+  bottom: 42px;
+}
+
+.pb-cat-injections .pb-category-img {
+  width: 62%;
+  right: 28px;
+  bottom: 20px;
+}
+
+.pb-cat-nutraceuticals .pb-category-img {
+  width: 82%;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+}
+
+.pb-cat-nutraceuticals:hover .pb-category-img {
+  transform: translateX(-50%) translateY(-10px) scale(1.045);
+}
+
+.pb-cat-healthcare .pb-category-img {
+  width: 78%;
+  right: 18px;
+  bottom: 22px;
+}
+
+
+/* =========================
+   Product Button CSS
+========================= */
+
+.pb-category-btn {
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  margin-top: 26px;
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #d7194b 0%, #0074ad 100%);
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 14px 26px rgba(0, 116, 173, 0.20);
+  transition: all 0.35s ease;
+}
+
+.pb-category-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.30) 48%, transparent 72%);
+  transform: translateX(-130%);
+  transition: transform 0.75s ease;
+}
+
+.pb-category-btn svg {
+  position: relative;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  transition: transform 0.35s ease;
+}
+
+.pb-category-card:hover .pb-category-btn {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(215, 25, 75, 0.22);
+}
+
+.pb-category-card:hover .pb-category-btn::before {
+  transform: translateX(130%);
+}
+
+.pb-category-card:hover .pb-category-btn svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================
+   Premium Leaf Accent CSS
+========================= */
+
+.pb-category-leaf {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 92px;
+  height: 92px;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+.pb-category-leaf::before,
+.pb-category-leaf::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  bottom: -4px;
+  width: 54px;
+  height: 88px;
+  border-radius: 80px 0 80px 0;
+  transform-origin: bottom center;
+}
+
+.pb-category-leaf::before {
+  background: linear-gradient(145deg, #d7194b 0%, #68b8dd 72%);
+  transform: rotate(38deg);
+}
+
+.pb-category-leaf::after {
+  left: 38px;
+  background: linear-gradient(145deg, #0074ad 0%, #b9e8ff 80%);
+  transform: rotate(18deg);
+  opacity: 0.88;
+}
+
+.pb-category-card:hover .pb-category-leaf {
+  animation: pbLeafPulse 1.4s ease-in-out infinite;
+}
+
+
+/* =========================
+   Shine Effect CSS
+========================= */
+
+.pb-category-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.32) 45%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.85s ease;
+}
+
+.pb-category-card:hover .pb-category-shine {
+  transform: translateX(120%);
+}
+
+
+/* =========================
+   Reveal Animation CSS
+========================= */
+
+.pb-cat-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pb-cat-reveal.pb-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pb-categories-grid .pb-cat-reveal:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.pb-categories-grid .pb-cat-reveal:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.pb-categories-grid .pb-cat-reveal:nth-child(3) {
+  transition-delay: 0.19s;
+}
+
+.pb-categories-grid .pb-cat-reveal:nth-child(4) {
+  transition-delay: 0.26s;
+}
+
+.pb-categories-grid .pb-cat-reveal:nth-child(5) {
+  transition-delay: 0.33s;
+}
+
+.pb-categories-grid .pb-cat-reveal:nth-child(6) {
+  transition-delay: 0.40s;
+}
+
+@keyframes pbLeafPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+
+/* =========================
+   Product Categories Responsive CSS
+========================= */
+
+@media (max-width: 1199px) {
+  .pb-categories-grid {
+    gap: 22px;
+  }
+
+  .pb-category-card {
+    min-height: 310px;
+  }
+
+  .pb-category-content {
+    padding: 28px 24px;
+  }
+
+  .pb-category-content h3 {
+    font-size: 28px;
+  }
+
+  .pb-cat-syrups .pb-category-img {
+    width: 58%;
+  }
+
+  .pb-cat-injections .pb-category-img {
+    width: 64%;
+  }
+}
+
+@media (max-width: 991px) {
+  .pb-categories-section {
+    padding: 78px 0 86px;
+  }
+
+  .pb-categories-container {
+    padding: 0 26px;
+  }
+
+  .pb-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pb-category-small,
+  .pb-category-wide {
+    grid-column: span 1;
+  }
+
+  .pb-category-card {
+    min-height: 330px;
+  }
+
+  .pb-cat-syrups .pb-category-img,
+  .pb-cat-injections .pb-category-img {
+    width: 78%;
+    right: 20px;
+    bottom: 24px;
+  }
+
+  .pb-category-btn {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .pb-categories-section {
+    padding: 66px 0 70px;
+  }
+
+  .pb-categories-bg-text {
+    top: 28px;
+    font-size: 54px;
+    letter-spacing: 3px;
+  }
+
+  .pb-categories-container {
+    padding: 0 16px;
+  }
+
+  .pb-categories-heading {
+    margin-bottom: 34px;
+  }
+
+  .pb-categories-heading h2 {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .pb-categories-heading p {
+    font-size: 15px;
+  }
+
+  .pb-categories-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .pb-category-card {
+    min-height: 300px;
+    border-radius: 24px;
+  }
+
+  .pb-category-content {
+    padding: 24px 22px;
+  }
+
+  .pb-category-content p {
+    font-size: 14px;
+  }
+
+  .pb-category-content h3 {
+    font-size: 28px;
+  }
+
+  .pb-category-btn {
+    min-height: 42px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .pb-cat-tablets .pb-category-img {
+    width: 70%;
+    bottom: 32px;
+  }
+
+  .pb-cat-capsules .pb-category-img {
+    width: 78%;
+    bottom: 62px;
+  }
+
+  .pb-cat-syrups .pb-category-img,
+  .pb-cat-injections .pb-category-img {
+    width: 74%;
+    right: 16px;
+    bottom: 20px;
+  }
+
+  .pb-cat-nutraceuticals .pb-category-img {
+    width: 72%;
+  }
+
+  .pb-cat-healthcare .pb-category-img {
+    width: 70%;
+  }
+
+  .pb-category-leaf {
+    width: 78px;
+    height: 78px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Why Choose Us Section CSS
+========================= */
+
+.pb-why-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 110px;
+  background:
+    radial-gradient(circle at 10% 18%, rgba(215, 25, 75, 0.05), transparent 25%),
+    radial-gradient(circle at 90% 20%, rgba(0, 116, 173, 0.08), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f8fdff 48%, #ffffff 100%);
+}
+
+.pb-why-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 116, 173, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 116, 173, 0.03) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at 50% 40%, black, transparent 78%);
+  pointer-events: none;
+}
+
+.pb-why-bg-text {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(68px, 12vw, 160px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 116, 173, 0.07);
+  background: linear-gradient(90deg, rgba(215, 25, 75, 0.07), rgba(0, 116, 173, 0.09));
+  -webkit-background-clip: text;
+  background-clip: text;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pb-why-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 34px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 58px;
+  align-items: center;
+}
+
+
+/* =========================
+   Left Content CSS
+========================= */
+
+.pb-why-left {
+  max-width: 560px;
+}
+
+.pb-why-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: rgba(0, 116, 173, 0.085);
+  color: #0074ad;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: inset 0 0 0 1px rgba(0, 116, 173, 0.09);
+}
+
+.pb-why-subtitle::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d7194b;
+  box-shadow: 0 0 0 6px rgba(215, 25, 75, 0.12);
+}
+
+.pb-why-title {
+  margin: 0 0 18px;
+  color: #07131c;
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -1.4px;
+}
+
+.pb-why-desc {
+  margin: 0 0 34px;
+  color: #3f505d;
+  font-size: 18px;
+  line-height: 1.68;
+}
+
+.pb-why-image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 22px;
+  border-radius: 34px;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, rgba(215, 25, 75, 0.26), rgba(0, 116, 173, 0.38)) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 28px 64px rgba(0, 80, 125, 0.12);
+}
+
+.pb-why-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  z-index: -1;
+  border-radius: 42px;
+  background: linear-gradient(135deg, rgba(215, 25, 75, 0.10), rgba(0, 116, 173, 0.14));
+  filter: blur(24px);
+}
+
+.pb-why-image-shape {
+  position: absolute;
+  right: -24px;
+  top: -24px;
+  width: 92px;
+  height: 92px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+  opacity: 0.14;
+  transform: rotate(18deg);
+}
+
+.pb-why-image {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 32px rgba(0, 80, 125, 0.14));
+  animation: pbWhyImageFloat 4.6s ease-in-out infinite;
+}
+
+
+/* =========================
+   Right Cards CSS
+========================= */
+
+.pb-why-right {
+  display: grid;
+  gap: 22px;
+}
+
+.pb-why-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 28px 24px;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(245,251,255,0.92) 100%);
+  border: 1px solid rgba(0, 116, 173, 0.10);
+  box-shadow: 0 18px 38px rgba(0, 80, 125, 0.07);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.pb-why-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.34) 48%, transparent 72%);
+  transform: translateX(-130%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.pb-why-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #d7194b 0%, #0074ad 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.pb-why-card:hover {
+  transform: translateY(-8px) translateX(4px);
+  border-color: rgba(0, 116, 173, 0.22);
+  box-shadow: 0 28px 52px rgba(0, 80, 125, 0.14);
+}
+
+.pb-why-card:hover::before {
+  transform: translateX(130%);
+}
+
+.pb-why-card:hover::after {
+  opacity: 1;
+}
+
+.pb-why-card-icon {
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(215, 25, 75, 0.10), rgba(0, 116, 173, 0.14));
+  transition: all 0.35s ease;
+}
+
+.pb-why-card-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: #0074ad;
+  transition: all 0.35s ease;
+}
+
+.pb-why-card:hover .pb-why-card-icon {
+  background: linear-gradient(135deg, #d7194b 0%, #0074ad 100%);
+  transform: rotate(-6deg) scale(1.05);
+  box-shadow: 0 16px 28px rgba(0, 116, 173, 0.18);
+}
+
+.pb-why-card:hover .pb-why-card-icon svg {
+  fill: #ffffff;
+}
+
+.pb-why-card-content h3 {
+  margin: 0 0 8px;
+  color: #07131c;
+  font-size: clamp(23px, 2vw, 34px);
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.pb-why-card-content p {
+  margin: 0;
+  color: #40515d;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   Reveal Animation CSS
+========================= */
+
+.pb-why-reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pb-why-reveal.pb-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pb-why-right .pb-why-reveal:nth-child(1) {
+  transition-delay: 0.08s;
+}
+
+.pb-why-right .pb-why-reveal:nth-child(2) {
+  transition-delay: 0.16s;
+}
+
+.pb-why-right .pb-why-reveal:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+.pb-why-right .pb-why-reveal:nth-child(4) {
+  transition-delay: 0.32s;
+}
+
+@keyframes pbWhyImageFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+/* =========================
+   Responsive CSS
+========================= */
+
+@media (max-width: 1199px) {
+  .pb-why-container {
+    gap: 42px;
+  }
+
+  .pb-why-card {
+    padding: 24px 20px;
+  }
+
+  .pb-why-card-content h3 {
+    font-size: 22px;
+  }
+
+  .pb-why-card-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .pb-why-section {
+    padding: 82px 0 88px;
+  }
+
+  .pb-why-container {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding: 0 26px;
+  }
+
+  .pb-why-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .pb-why-desc {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pb-why-image-wrap {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .pb-why-section {
+    padding: 68px 0 72px;
+  }
+
+  .pb-why-bg-text {
+    top: 24px;
+    font-size: 52px;
+    letter-spacing: 3px;
+  }
+
+  .pb-why-container {
+    padding: 0 16px;
+    gap: 34px;
+  }
+
+  .pb-why-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .pb-why-desc {
+    font-size: 15px;
+    line-height: 1.62;
+    margin-bottom: 26px;
+  }
+
+  .pb-why-image-wrap {
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .pb-why-card {
+    padding: 20px 16px;
+    gap: 14px;
+    border-radius: 18px;
+  }
+
+  .pb-why-card-icon {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .pb-why-card-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .pb-why-card-content h3 {
+    font-size: 20px;
+  }
+
+  .pb-why-card-content p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}
+
+/* =========================
+   Extra Premium Why Choose Us Animations
+========================= */
+
+.pb-why-card {
+  isolation: isolate;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.pb-why-card .pb-why-card-content,
+.pb-why-card .pb-why-card-icon {
+  position: relative;
+  z-index: 3;
+}
+
+.pb-why-card::before {
+  z-index: 1;
+}
+
+.pb-why-card::after {
+  z-index: 2;
+}
+
+/* Cursor Glow */
+.pb-why-card-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--why-x, 50%) var(--why-y, 50%),
+    rgba(0, 116, 173, 0.16),
+    transparent 34%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.pb-why-card:hover .pb-why-card-glow {
+  opacity: 1;
+}
+
+/* Premium Card Hover */
+.pb-why-card:hover {
+  transform: translateY(-10px) scale(1.015);
+}
+
+/* Icon Smooth Premium Motion */
+.pb-why-card-icon {
+  position: relative;
+  overflow: hidden;
+}
+
+.pb-why-card-icon::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 45%,
+    transparent 70%
+  );
+  transform: translateX(-120%) rotate(15deg);
+  transition: transform 0.8s ease;
+}
+
+.pb-why-card:hover .pb-why-card-icon::before {
+  transform: translateX(120%) rotate(15deg);
+}
+
+.pb-why-card:hover .pb-why-card-icon {
+  animation: pbWhyIconPulse 1.8s ease-in-out infinite;
+}
+
+/* Text Micro Animation */
+.pb-why-card-content h3,
+.pb-why-card-content p {
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.pb-why-card:hover .pb-why-card-content h3 {
+  transform: translateX(4px);
+  color: #0074ad;
+}
+
+.pb-why-card:hover .pb-why-card-content p {
+  transform: translateX(4px);
+}
+
+/* Image Smooth Parallax Feel */
+.pb-why-image-wrap {
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.pb-why-image-wrap:hover {
+  box-shadow: 0 38px 80px rgba(0, 80, 125, 0.18);
+}
+
+.pb-why-image {
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.pb-why-image-wrap:hover .pb-why-image {
+  filter: drop-shadow(0 30px 42px rgba(0, 80, 125, 0.2));
+}
+
+/* Subtitle Dot Pulse */
+.pb-why-subtitle::before {
+  animation: pbWhyDotPulse 2.2s ease-in-out infinite;
+}
+
+/* Smooth Background Text Entrance */
+.pb-why-bg-text {
+  animation: pbWhyBgTextFloat 7s ease-in-out infinite;
+}
+
+/* Left Image Shape Animation */
+.pb-why-image-shape {
+  animation: pbWhyShapeRotate 7s ease-in-out infinite;
+}
+
+/* Card Stagger Upgrade */
+.pb-why-right .pb-why-card:nth-child(1) {
+  transition-delay: 0.08s;
+}
+
+.pb-why-right .pb-why-card:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+.pb-why-right .pb-why-card:nth-child(3) {
+  transition-delay: 0.28s;
+}
+
+.pb-why-right .pb-why-card:nth-child(4) {
+  transition-delay: 0.38s;
+}
+
+.pb-why-reveal {
+  filter: blur(8px);
+}
+
+.pb-why-reveal.pb-show {
+  filter: blur(0);
+}
+
+/* Keyframes */
+@keyframes pbWhyIconPulse {
+  0%, 100% {
+    transform: rotate(-6deg) scale(1.05);
+  }
+
+  50% {
+    transform: rotate(-2deg) scale(1.11);
+  }
+}
+
+@keyframes pbWhyDotPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(215, 25, 75, 0.12);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(215, 25, 75, 0.04);
+  }
+}
+
+@keyframes pbWhyBgTextFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+@keyframes pbWhyShapeRotate {
+  0%, 100% {
+    transform: rotate(18deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(28deg) scale(1.08);
+  }
+}
+
+
+/* =========================
+   Mobile Animation Optimization
+========================= */
+
+@media (max-width: 991px) {
+  .pb-why-card:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+}
+
+@media (max-width: 575px) {
+  .pb-why-reveal {
+    filter: blur(4px);
+  }
+
+  .pb-why-card:hover .pb-why-card-content h3,
+  .pb-why-card:hover .pb-why-card-content p {
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================
+   Reduced Motion Safe CSS
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pb-why-card,
+  .pb-why-image-wrap,
+  .pb-why-image,
+  .pb-why-card-icon,
+  .pb-why-bg-text,
+  .pb-why-image-shape,
+  .pb-why-subtitle::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+/* =========================
+   Certification Section CSS
+========================= */
+
+.pb-cert-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 110px;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(215, 25, 75, 0.055), transparent 25%),
+    radial-gradient(circle at 88% 18%, rgba(0, 116, 173, 0.08), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f8fdff 50%, #ffffff 100%);
+}
+
+.pb-cert-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 116, 173, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 116, 173, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at 50% 40%, black, transparent 78%);
+  pointer-events: none;
+}
+
+.pb-cert-section::after {
+  content: "";
+  position: absolute;
+  right: -130px;
+  top: 80px;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background: rgba(0, 116, 173, 0.10);
+  filter: blur(5px);
+}
+
+.pb-cert-bg-text {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(68px, 12vw, 165px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 116, 173, 0.07);
+  background: linear-gradient(
+    90deg,
+    rgba(215, 25, 75, 0.07),
+    rgba(0, 116, 173, 0.09)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  pointer-events: none;
+  user-select: none;
+  animation: pbCertBgFloat 7s ease-in-out infinite;
+}
+
+.pb-cert-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 34px;
+}
+
+.pb-cert-heading {
+  max-width: 850px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.pb-cert-heading span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  padding: 9px 17px;
+  border-radius: 999px;
+  background: rgba(0, 116, 173, 0.085);
+  color: #0074ad;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: inset 0 0 0 1px rgba(0, 116, 173, 0.09);
+}
+
+.pb-cert-heading span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d7194b;
+  box-shadow: 0 0 0 6px rgba(215, 25, 75, 0.12);
+  animation: pbCertDotPulse 2.2s ease-in-out infinite;
+}
+
+.pb-cert-heading h2 {
+  margin: 0 0 16px;
+  color: #07131c;
+  font-size: clamp(38px, 4.2vw, 58px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -1.6px;
+}
+
+.pb-cert-heading p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #40515d;
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+
+/* =========================
+   Certification Grid CSS
+========================= */
+
+.pb-cert-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.pb-cert-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 285px;
+  padding: 28px 24px 24px;
+  border-radius: 28px;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, rgba(215, 25, 75, 0.22), rgba(0, 116, 173, 0.32)) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 20px 45px rgba(0, 80, 125, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+  text-align: center;
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.pb-cert-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(215, 25, 75, 0.08), transparent 34%),
+    radial-gradient(circle at 80% 75%, rgba(0, 116, 173, 0.10), transparent 36%),
+    linear-gradient(180deg, #ffffff 0%, #f4fbff 100%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.pb-cert-card::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 0;
+  height: 4px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(90deg, #d7194b, #0074ad);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.45s ease;
+}
+
+.pb-cert-card:hover {
+  transform: translateY(-12px) scale(1.015);
+  box-shadow: 0 34px 70px rgba(0, 80, 125, 0.16);
+}
+
+.pb-cert-card:hover::before {
+  opacity: 1;
+}
+
+.pb-cert-card:hover::after {
+  transform: scaleX(1);
+}
+
+.pb-cert-icon-wrap {
+  width: 148px;
+  height: 148px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 116, 173, 0.10);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65),
+    0 16px 34px rgba(0, 80, 125, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  transition: all 0.45s ease;
+}
+
+.pb-cert-icon-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: saturate(1.05);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.pb-cert-card:hover .pb-cert-icon-wrap {
+  transform: translateY(-5px) rotate(-2deg);
+  border-color: rgba(0, 116, 173, 0.22);
+  box-shadow: 0 22px 42px rgba(0, 80, 125, 0.14);
+}
+
+.pb-cert-card:hover .pb-cert-icon-wrap img {
+  transform: scale(1.06);
+  filter: saturate(1.15) drop-shadow(0 8px 12px rgba(0, 116, 173, 0.15));
+}
+
+.pb-cert-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.pb-cert-card-content h3 {
+  margin: 0 0 8px;
+  color: #07131c;
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 900;
+  transition: color 0.35s ease;
+}
+
+.pb-cert-card-content p {
+  margin: 0;
+  color: #526673;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pb-cert-card:hover .pb-cert-card-content h3 {
+  color: #0074ad;
+}
+
+
+/* =========================
+   Shine Effect CSS
+========================= */
+
+.pb-cert-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.42) 45%,
+    transparent 70%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.85s ease;
+}
+
+.pb-cert-card:hover .pb-cert-shine {
+  transform: translateX(130%);
+}
+
+
+/* =========================
+   Reveal Animation CSS
+========================= */
+
+.pb-cert-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  filter: blur(7px);
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.85s ease;
+}
+
+.pb-cert-reveal.pb-show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.pb-cert-grid .pb-cert-reveal:nth-child(1) {
+  transition-delay: 0.08s;
+}
+
+.pb-cert-grid .pb-cert-reveal:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+.pb-cert-grid .pb-cert-reveal:nth-child(3) {
+  transition-delay: 0.28s;
+}
+
+
+/* =========================
+   Certification Keyframes
+========================= */
+
+@keyframes pbCertBgFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+@keyframes pbCertDotPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(215, 25, 75, 0.12);
+  }
+
+  50% {
+    box-shadow: 0 0 0 11px rgba(215, 25, 75, 0.04);
+  }
+}
+
+
+/* =========================
+   Certification Responsive CSS
+========================= */
+
+@media (max-width: 991px) {
+  .pb-cert-section {
+    padding: 82px 0 90px;
+  }
+
+  .pb-cert-container {
+    padding: 0 26px;
+  }
+
+  .pb-cert-grid {
+    max-width: 720px;
+    grid-template-columns: 1fr;
+  }
+
+  .pb-cert-card {
+    min-height: auto;
+    padding: 26px 24px;
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .pb-cert-icon-wrap {
+    flex: 0 0 130px;
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 575px) {
+  .pb-cert-section {
+    padding: 68px 0 74px;
+  }
+
+  .pb-cert-bg-text {
+    top: 24px;
+    font-size: 52px;
+    letter-spacing: 3px;
+  }
+
+  .pb-cert-container {
+    padding: 0 16px;
+  }
+
+  .pb-cert-heading {
+    margin-bottom: 34px;
+  }
+
+  .pb-cert-heading h2 {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .pb-cert-heading p {
+    font-size: 15px;
+  }
+
+  .pb-cert-grid {
+    gap: 18px;
+  }
+
+  .pb-cert-card {
+    padding: 24px 18px;
+    border-radius: 22px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pb-cert-icon-wrap {
+    width: 126px;
+    height: 126px;
+    flex: 0 0 126px;
+    border-radius: 22px;
+  }
+
+  .pb-cert-card-content h3 {
+    font-size: 20px;
+  }
+
+  .pb-cert-card-content p {
+    font-size: 13px;
+  }
+}
