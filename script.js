@@ -169,3 +169,40 @@ if (pbHeroImageShell) {
     pbHeroImageShell.style.setProperty("--hero-y", "50%");
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const aboutSection = document.querySelector(".prb-about-section");
+  const imageCard = document.querySelector(".prb-about-image-card");
+
+  if (aboutSection) {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          aboutSection.classList.add("prb-show");
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    observer.observe(aboutSection);
+  }
+
+  if (imageCard) {
+    imageCard.addEventListener("mousemove", function(e) {
+      const rect = imageCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const rotateY = ((x / rect.width) - 0.5) * 8;
+      const rotateX = ((y / rect.height) - 0.5) * -8;
+
+      imageCard.style.transform =
+        "perspective(1000px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-6px)";
+    });
+
+    imageCard.addEventListener("mouseleave", function() {
+      imageCard.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+    });
+  }
+});
