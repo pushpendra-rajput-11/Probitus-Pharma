@@ -332,3 +332,289 @@ const pbCertObserver = new IntersectionObserver(
 pbCertRevealItems.forEach(function (item) {
   pbCertObserver.observe(item);
 });
+
+
+/* =========================
+   Product Portfolio Data
+========================= */
+
+const pbProductData = {
+  "rich-pcos": {
+    image: "assets/rich-pcos-transparent-clean.png",
+    imageAlt: "RICH-PCOS Product",
+    category: "Women’s Health / PCOS Support",
+    title: "RICH-PCOS",
+    overview:
+      "A complete ovary nutrition support formulation designed for hormonal balance, ovulatory wellness, insulin sensitivity, antioxidant protection, and metabolic support.",
+    composition: [
+      "Myo-Inositol 1000 mg",
+      "Berberine Phytosome 227.25 mg",
+      "D-Chiro Inositol 25 mg",
+      "Alpha Lactalbumin 25 mg",
+      "Grape Seed Extract 4.25 mg",
+      "Chromium Picolinate 201.5 mcg",
+      "L-Methylfolate Calcium 45 mcg"
+    ],
+    support: [
+      "PCOS support",
+      "Irregular cycle support",
+      "Ovulatory function support",
+      "Insulin resistance support",
+      "Antioxidant protection",
+      "Follicular development support"
+    ],
+    positioning:
+      "Display this product as a premium women’s health formulation focused on PCOS, hormonal balance, ovary nutrition, insulin sensitivity, and reproductive wellness."
+  },
+
+  "probizasta": {
+    image: "assets/probizasta-200-sr-transparent-clean.png",
+    imageAlt: "Probizasta-200 SR Product",
+    category: "Women’s Health / Progesterone Support",
+    title: "Probizasta-200 SR",
+    overview:
+      "A sustained-release progesterone formulation positioned for clinician-directed reproductive support and pregnancy maintenance care.",
+    composition: [
+      "Natural Micronized Progesterone SR 200 mg"
+    ],
+    support: [
+      "Luteal phase support",
+      "Progesterone deficiency support",
+      "IVF support",
+      "Pregnancy maintenance support",
+      "Recurrent miscarriage support",
+      "Threatened abortion support"
+    ],
+    positioning:
+      "Display this as a specialist progesterone support product with a trustworthy and clinical tone. Avoid over-promising; keep the content doctor-directed."
+  },
+
+  "life-nest": {
+    image: "assets/life-nest-f-transparent-clean.png",
+    imageAlt: "Life Nest-F Product",
+    category: "Female Fertility Support",
+    title: "Life Nest-F",
+    overview:
+      "A fertility-focused formulation combining amino acids, antioxidants, minerals, vitamins, and herbal extract to support reproductive wellness.",
+    composition: [
+      "L-Arginine 100 mg",
+      "Green Tea Extract 100 mg",
+      "Inositol 100 mg",
+      "Magnesium 50 mg",
+      "Chasteberry Extract 40 mg",
+      "Vitamin C 40 mg",
+      "Niacinamide 12 mg",
+      "Zinc 10 mg",
+      "Vitamin E 10 mg",
+      "Iron 3 mg"
+    ],
+    support: [
+      "Ovulation support",
+      "Luteal phase support",
+      "Endometrial receptivity support",
+      "Implantation support",
+      "Follicular maturation support",
+      "Conception support",
+      "Early pregnancy support"
+    ],
+    positioning:
+      "Display Life Nest-F as a complete female fertility wellness product with focus on reproductive nutrition, hormonal balance, and conception support."
+  },
+
+  "stop-nvp": {
+    image: "assets/stop-nvp-transparent-clean.png",
+    imageAlt: "STOP-NVP Product",
+    category: "Pregnancy Care",
+    title: "STOP-NVP",
+    overview:
+      "A pregnancy-focused formulation positioned for doctor-directed support in nausea, vomiting, and morning sickness care.",
+    composition: [
+      "Doxylamine 20 mg",
+      "Pyridoxine HCl 20 mg",
+      "Folic Acid 5 mg"
+    ],
+    support: [
+      "Morning sickness support",
+      "Nausea and vomiting support in pregnancy",
+      "Pregnancy wellness support",
+      "Folic acid nutritional support"
+    ],
+    positioning:
+      "Display STOP-NVP under pregnancy care with a calm, supportive tone. Keep claims responsible and physician-directed."
+  },
+
+  "guid-mag": {
+    image: "assets/guid-mag-transparent-clean.png",
+    imageAlt: "Guid-MAG Product",
+    category: "Pregnancy / Metabolic / Bone & Muscle Support",
+    title: "Guid-MAG",
+    overview:
+      "A magnesium glycinate complex and Vitamin D3 formulation positioned for muscle comfort, bone strength, glucose metabolism support, and pregnancy-related wellness.",
+    composition: [
+      "Magnesium Glycine Complex equivalent to Elemental Magnesium 250 mg",
+      "Vitamin D3 Cholecalciferol 1000 IU"
+    ],
+    support: [
+      "Muscle cramp support",
+      "Bone strength support",
+      "Vitamin D deficiency support",
+      "Neuromuscular wellness",
+      "Pregnancy-related metabolic support",
+      "Glucose metabolism support"
+    ],
+    positioning:
+      "Display Guid-MAG as a versatile magnesium and Vitamin D3 product for pregnancy wellness, metabolic care, muscle comfort, and bone support."
+  },
+
+  "seratus": {
+    image: "assets/seratus-transparent-clean.png",
+    imageAlt: "Seratus Product",
+    category: "Joint Care / Mobility Support",
+    title: "Seratus",
+    overview:
+      "A joint mobility support formulation developed with collagen peptide, herbal extracts, antioxidants, and sodium hyaluronate for cartilage and flexibility support.",
+    composition: [
+      "Collagen Peptide Type-II 40 mg",
+      "Curcumin Extract 125 mg",
+      "Boswellia 100 mg",
+      "Rose Hip Extract 100 mg",
+      "Vitamin C 35 mg",
+      "Sodium Hyaluronate 80 mg",
+      "Astaxanthin 4 mg"
+    ],
+    support: [
+      "Joint pain support",
+      "Cartilage health support",
+      "Mobility support",
+      "Sports injury support",
+      "Age-related joint wellness",
+      "Flexibility support"
+    ],
+    positioning:
+      "Display Seratus as a premium joint care product focused on cartilage support, inflammation-focused wellness, flexibility, and improved mobility."
+  }
+};
+
+
+/* =========================
+   Product Reveal Animation
+========================= */
+
+const pbProductRevealItems = document.querySelectorAll(".pb-product-reveal");
+
+const pbProductObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("pb-show");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+pbProductRevealItems.forEach(function (item) {
+  pbProductObserver.observe(item);
+});
+
+
+/* =========================
+   Product Filter JS
+========================= */
+
+const pbProductFilterBtns = document.querySelectorAll(".pb-product-filter-btn");
+const pbProductCards = document.querySelectorAll(".pb-product-card");
+
+pbProductFilterBtns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    const filterValue = btn.getAttribute("data-filter");
+
+    pbProductFilterBtns.forEach(function (item) {
+      item.classList.remove("active");
+    });
+
+    btn.classList.add("active");
+
+    pbProductCards.forEach(function (card) {
+      const category = card.getAttribute("data-category");
+
+      if (filterValue === "all" || category.includes(filterValue)) {
+        card.classList.remove("pb-hide");
+      } else {
+        card.classList.add("pb-hide");
+      }
+    });
+  });
+});
+
+
+/* =========================
+   Product Modal JS
+========================= */
+
+const pbProductModal = document.querySelector(".pb-product-modal");
+const pbProductModalOverlay = document.querySelector(".pb-product-modal-overlay");
+const pbProductModalClose = document.querySelector(".pb-product-modal-close");
+
+const pbModalImage = document.getElementById("pbModalImage");
+const pbModalCategory = document.getElementById("pbModalCategory");
+const pbModalTitle = document.getElementById("pbModalTitle");
+const pbModalOverview = document.getElementById("pbModalOverview");
+const pbModalComposition = document.getElementById("pbModalComposition");
+const pbModalSupport = document.getElementById("pbModalSupport");
+const pbModalPositioning = document.getElementById("pbModalPositioning");
+
+function pbCreateListItems(listElement, items) {
+  listElement.innerHTML = "";
+
+  items.forEach(function (item) {
+    const li = document.createElement("li");
+    li.textContent = item;
+    listElement.appendChild(li);
+  });
+}
+
+function pbOpenProductModal(productKey) {
+  const product = pbProductData[productKey];
+
+  if (!product) return;
+
+  pbModalImage.src = product.image;
+  pbModalImage.alt = product.imageAlt;
+
+  pbModalCategory.textContent = product.category;
+  pbModalTitle.textContent = product.title;
+  pbModalOverview.textContent = product.overview;
+  pbModalPositioning.textContent = product.positioning;
+
+  pbCreateListItems(pbModalComposition, product.composition);
+  pbCreateListItems(pbModalSupport, product.support);
+
+  pbProductModal.classList.add("active");
+  pbProductModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function pbCloseProductModal() {
+  pbProductModal.classList.remove("active");
+  pbProductModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+document.querySelectorAll(".pb-product-detail-btn").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    const productKey = btn.getAttribute("data-product");
+    pbOpenProductModal(productKey);
+  });
+});
+
+pbProductModalOverlay.addEventListener("click", pbCloseProductModal);
+pbProductModalClose.addEventListener("click", pbCloseProductModal);
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && pbProductModal.classList.contains("active")) {
+    pbCloseProductModal();
+  }
+});
