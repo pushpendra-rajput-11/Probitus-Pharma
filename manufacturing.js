@@ -1,10 +1,11 @@
+/* manufacturing.js */
 document.addEventListener("DOMContentLoaded", function () {
-  mfgRevealAnimation();
-  mfgSmoothScroll();
+  mpgRevealAnimation();
+  mpgSmoothScroll();
 });
 
-function mfgRevealAnimation() {
-  const revealItems = document.querySelectorAll(".mfg-reveal");
+function mpgRevealAnimation() {
+  const revealItems = document.querySelectorAll(".mpg-reveal");
 
   if (!revealItems.length) return;
 
@@ -12,7 +13,7 @@ function mfgRevealAnimation() {
     function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add("mfg-show");
+          entry.target.classList.add("mpg-show");
         }
       });
     },
@@ -26,7 +27,7 @@ function mfgRevealAnimation() {
   });
 }
 
-function mfgSmoothScroll() {
+function mpgSmoothScroll() {
   const links = document.querySelectorAll('a[href^="#"]');
 
   links.forEach(function (link) {

@@ -1,0 +1,764 @@
+/* manufacturing.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #07131c;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mpg-container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+
+/* Banner */
+
+.mpg-hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #07131c;
+}
+
+.mpg-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/ChatGPT\ Image\ May\ 28\,\ 2026\,\ 02_49_47\ AM.png");
+  background-size: cover;
+  background-position: center right;
+  transform: scale(1.02);
+}
+
+.mpg-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(248, 252, 255, 0.98) 0%, rgba(248, 252, 255, 0.93) 43%, rgba(248, 252, 255, 0.66) 70%, rgba(248, 252, 255, 0.18) 100%),
+    radial-gradient(circle at 12% 30%, rgba(215, 25, 75, 0.11), transparent 30%),
+    radial-gradient(circle at 82% 22%, rgba(0, 116, 173, 0.2), transparent 34%);
+}
+
+.mpg-hero-pattern {
+  position: absolute;
+  inset: 0;
+  /* background-image:
+    linear-gradient(rgba(0, 116, 173, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 116, 173, 0.045) 1px, transparent 1px); */
+  background-size: 42px 42px;
+}
+
+.mpg-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 82px 0;
+}
+
+.mpg-kicker,
+.mpg-section-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.mpg-kicker {
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 9px 16px;
+  color: #0074ad;
+  background: rgba(0, 116, 173, 0.085);
+  border: 1px solid rgba(0, 116, 173, 0.16);
+  font-size: 14px;
+}
+
+.mpg-kicker i {
+  width: 10px;
+  height: 10px;
+  background: #d7194b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba(215, 25, 75, 0.14);
+}
+
+.mpg-hero h1 {
+  margin: 0 0 18px;
+  color: #07131c;
+  font-size: clamp(36px, 4.4vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  font-weight: 900;
+}
+
+.mpg-hero h1 span,
+.mpg-facility-text h2 span,
+.mpg-quality-content h2 span,
+.mpg-compliance-content h2 span {
+  display: block;
+  background: linear-gradient(90deg, #d7194b 0%, #8d3b80 46%, #0074ad 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mpg-hero p {
+  max-width: 650px;
+  margin: 0 0 26px;
+  color: #40515d;
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+.mpg-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.mpg-btn-primary,
+.mpg-btn-secondary,
+.mpg-cta-content a {
+  min-height: 50px;
+  padding: 13px 23px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 900;
+  transition: all 0.35s ease;
+}
+
+.mpg-btn-primary,
+.mpg-cta-content a {
+  color: #ffffff;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+  box-shadow: 0 16px 34px rgba(0, 116, 173, 0.2);
+}
+
+.mpg-btn-secondary {
+  color: #07131c;
+  background: #ffffff;
+  border: 1px solid rgba(0, 116, 173, 0.16);
+  box-shadow: 0 14px 28px rgba(0, 80, 125, 0.06);
+}
+
+.mpg-btn-primary svg,
+.mpg-cta-content a svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+  transition: transform 0.35s ease;
+}
+
+.mpg-btn-primary:hover,
+.mpg-btn-secondary:hover,
+.mpg-cta-content a:hover {
+  transform: translateY(-4px);
+}
+
+.mpg-btn-primary:hover svg,
+.mpg-cta-content a:hover svg {
+  transform: translateX(5px);
+}
+
+
+/* Facility */
+
+.mpg-facility {
+  padding: 68px 0;
+  background: #ffffff;
+}
+
+.mpg-facility-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 46px;
+  align-items: center;
+}
+
+.mpg-section-tag {
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  color: #0074ad;
+  background: rgba(0, 116, 173, 0.085);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.45px;
+}
+
+.mpg-facility-text h2,
+.mpg-heading h2,
+.mpg-quality-content h2,
+.mpg-compliance-content h2,
+.mpg-cta-content h2 {
+  margin: 0 0 14px;
+  color: #07131c;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.9px;
+  font-weight: 900;
+}
+
+.mpg-facility-text > p,
+.mpg-heading p,
+.mpg-quality-content > p,
+.mpg-compliance-content > p,
+.mpg-cta-content p {
+  margin: 0;
+  color: #40515d;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.mpg-feature-list {
+  display: grid;
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.mpg-feature-list > div {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 17px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 116, 173, 0.1);
+  box-shadow: 0 12px 28px rgba(0, 80, 125, 0.06);
+  transition: all 0.35s ease;
+}
+
+.mpg-feature-list > div:hover {
+  transform: translateX(7px);
+  box-shadow: 0 20px 44px rgba(0, 80, 125, 0.1);
+}
+
+.mpg-feature-list span {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mpg-feature-list svg {
+  width: 21px;
+  height: 21px;
+  fill: #ffffff;
+}
+
+.mpg-feature-list h3 {
+  margin: 0 0 6px;
+  color: #07131c;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.mpg-feature-list p {
+  margin: 0;
+  color: #40515d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.mpg-facility-image,
+.mpg-quality-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  box-shadow: 0 20px 48px rgba(0, 80, 125, 0.11);
+}
+
+.mpg-facility-image img,
+.mpg-quality-image img {
+  width: 100%;
+  height: 405px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.mpg-facility-image:hover img,
+.mpg-quality-image:hover img {
+  transform: scale(1.06);
+}
+
+.mpg-floating-card {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  max-width: 270px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 116, 173, 0.14);
+  box-shadow: 0 14px 30px rgba(0, 80, 125, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.mpg-floating-card strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #07131c;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.mpg-floating-card span {
+  color: #40515d;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+/* Process */
+
+.mpg-process {
+  padding: 68px 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(215, 25, 75, 0.055), transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(0, 116, 173, 0.085), transparent 30%),
+    linear-gradient(180deg, #f8fcff, #ffffff);
+}
+
+.mpg-heading {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.mpg-heading span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: #0074ad;
+  background: rgba(0, 116, 173, 0.085);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.45px;
+}
+
+.mpg-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.mpg-process-card {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 14px 22px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 116, 173, 0.1);
+  box-shadow: 0 14px 32px rgba(0, 80, 125, 0.06);
+  transition: all 0.35s ease;
+}
+
+.mpg-process-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 52px rgba(0, 80, 125, 0.12);
+}
+
+.mpg-process-img {
+  overflow: hidden;
+  height: 180px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: #f8fcff;
+}
+
+.mpg-process-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.mpg-process-card:hover .mpg-process-img img {
+  transform: scale(1.08);
+}
+
+.mpg-process-card h3 {
+  margin: 0 8px 8px;
+  color: #07131c;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.mpg-process-card p {
+  margin: 0 8px;
+  color: #40515d;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+
+/* Quality */
+
+.mpg-quality {
+  padding: 68px 0;
+  background: #ffffff;
+}
+
+.mpg-quality-box {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.mpg-quality-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.mpg-quality-points div {
+  padding: 18px;
+  border-radius: 18px;
+  background: #f8fcff;
+  border: 1px solid rgba(0, 116, 173, 0.1);
+  transition: all 0.35s ease;
+}
+
+.mpg-quality-points div:hover {
+  transform: translateY(-5px);
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(0, 80, 125, 0.08);
+}
+
+.mpg-quality-points h3 {
+  margin: 0 0 7px;
+  color: #07131c;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.mpg-quality-points p {
+  margin: 0;
+  color: #40515d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* Compliance */
+
+.mpg-compliance {
+  padding: 68px 0;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(0, 116, 173, 0.08), transparent 30%),
+    linear-gradient(180deg, #ffffff, #f8fcff);
+}
+
+.mpg-compliance-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.78fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.mpg-compliance-content ul {
+  display: grid;
+  gap: 13px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mpg-compliance-content li {
+  position: relative;
+  padding-left: 22px;
+  color: #07131c;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.mpg-compliance-content li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+}
+
+.mpg-standard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.mpg-standard-grid div {
+  min-height: 150px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 116, 173, 0.1);
+  box-shadow: 0 14px 32px rgba(0, 80, 125, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+.mpg-standard-grid div:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 24px 52px rgba(0, 80, 125, 0.12);
+}
+
+.mpg-standard-grid img {
+  max-width: 120px;
+  max-height: 90px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* CTA */
+
+.mpg-cta {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #07131c;
+}
+
+.mpg-cta-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/ChatGPT\ Image\ May\ 28\,\ 2026\,\ 03_14_29\ AM.png");
+  background-size: cover;
+  background-position: center right;
+  transform: scale(1.03);
+}
+
+.mpg-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 19, 28, 0.92), rgba(7, 19, 28, 0.68), rgba(7, 19, 28, 0.34)),
+    radial-gradient(circle at 15% 30%, rgba(215, 25, 75, 0.24), transparent 32%),
+    radial-gradient(circle at 85% 30%, rgba(0, 116, 173, 0.28), transparent 35%);
+}
+
+.mpg-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  padding: 64px 0;
+}
+
+.mpg-cta-content span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.13);
+  font-size: 13px;
+  font-weight: 900;
+  backdrop-filter: blur(12px);
+}
+
+.mpg-cta-content h2 {
+  color: #ffffff;
+}
+
+.mpg-cta-content p {
+  max-width: 640px;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* Animation */
+
+.mpg-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(5px);
+  transition:
+    opacity 0.78s ease,
+    transform 0.78s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.78s ease;
+}
+
+.mpg-reveal.mpg-show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .mpg-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .mpg-container {
+    padding: 0 24px;
+  }
+
+  .mpg-hero {
+    min-height: 520px;
+  }
+
+  .mpg-facility-grid,
+  .mpg-quality-box,
+  .mpg-compliance-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .mpg-facility,
+  .mpg-process,
+  .mpg-quality,
+  .mpg-compliance {
+    padding: 54px 0;
+  }
+
+  .mpg-facility-image img,
+  .mpg-quality-image img {
+    height: 330px;
+  }
+
+  .mpg-standard-grid {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 575px) {
+  .mpg-container {
+    padding: 0 16px;
+  }
+
+  .mpg-hero {
+    min-height: 500px;
+  }
+
+  .mpg-hero-content {
+    padding: 70px 0;
+  }
+
+  .mpg-hero h1 {
+    font-size: 33px;
+    letter-spacing: -0.7px;
+  }
+
+  .mpg-hero p,
+  .mpg-facility-text > p,
+  .mpg-heading p,
+  .mpg-quality-content > p,
+  .mpg-compliance-content > p,
+  .mpg-cta-content p {
+    font-size: 14px;
+  }
+
+  .mpg-hero-actions {
+    flex-direction: column;
+  }
+
+  .mpg-btn-primary,
+  .mpg-btn-secondary,
+  .mpg-cta-content a {
+    width: 100%;
+  }
+
+  .mpg-facility,
+  .mpg-process,
+  .mpg-quality,
+  .mpg-compliance {
+    padding: 42px 0;
+  }
+
+  .mpg-facility-text h2,
+  .mpg-heading h2,
+  .mpg-quality-content h2,
+  .mpg-compliance-content h2,
+  .mpg-cta-content h2 {
+    font-size: 27px;
+  }
+
+  .mpg-facility-image,
+  .mpg-quality-image {
+    border-radius: 22px;
+  }
+
+  .mpg-facility-image img,
+  .mpg-quality-image img {
+    height: 245px;
+  }
+
+  .mpg-floating-card {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    max-width: 100%;
+    margin: 14px;
+  }
+
+  .mpg-process-grid,
+  .mpg-quality-points {
+    grid-template-columns: 1fr;
+  }
+
+  .mpg-process-img {
+    height: 190px;
+  }
+
+  .mpg-process-card {
+    border-radius: 20px;
+  }
+
+  .mpg-standard-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .mpg-standard-grid div {
+    min-height: 120px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .mpg-standard-grid img {
+    max-width: 95px;
+    max-height: 75px;
+  }
+
+  .mpg-cta {
+    min-height: 400px;
+  }
+}
