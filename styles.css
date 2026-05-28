@@ -2920,7 +2920,7 @@ ul {
 .pb-categories-section {
   position: relative;
   overflow: hidden;
-  padding: 96px 0 110px;
+  padding: 50px 0 50px;
   background:
     radial-gradient(circle at 12% 18%, rgba(215, 25, 75, 0.055), transparent 25%),
     radial-gradient(circle at 88% 14%, rgba(0, 116, 173, 0.08), transparent 28%),
@@ -3496,7 +3496,7 @@ ul {
 .pb-why-section {
   position: relative;
   overflow: hidden;
-  padding: 100px 0 110px;
+  padding: 50px 0 50px;
   background:
     radial-gradient(circle at 10% 18%, rgba(215, 25, 75, 0.05), transparent 25%),
     radial-gradient(circle at 90% 20%, rgba(0, 116, 173, 0.08), transparent 28%),
@@ -4134,7 +4134,7 @@ ul {
 .pb-cert-section {
   position: relative;
   overflow: hidden;
-  padding: 100px 0 110px;
+  padding: 50px 0 50px;
   background:
     radial-gradient(circle at 12% 20%, rgba(215, 25, 75, 0.055), transparent 25%),
     radial-gradient(circle at 88% 18%, rgba(0, 116, 173, 0.08), transparent 28%),
@@ -4559,7 +4559,7 @@ ul {
 .pb-product-portfolio-section {
   position: relative;
   overflow: hidden;
-  padding: 105px 0 115px;
+  padding: 20px 0 30px;
   background:
     radial-gradient(circle at 12% 18%, rgba(215, 25, 75, 0.055), transparent 26%),
     radial-gradient(circle at 88% 12%, rgba(0, 116, 173, 0.085), transparent 28%),
