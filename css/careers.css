@@ -1,0 +1,827 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #07131c;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.crx-container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.crx-hero {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #f8fcff;
+}
+
+.crx-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/");
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.22;
+  transform: scale(1.04);
+}
+
+.crx-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(248, 252, 255, 0.98) 0%, rgba(248, 252, 255, 0.94) 48%, rgba(248, 252, 255, 0.72) 100%),
+    radial-gradient(circle at 12% 25%, rgba(215, 25, 75, 0.12), transparent 30%),
+    radial-gradient(circle at 82% 20%, rgba(0, 116, 173, 0.18), transparent 36%);
+}
+
+.crx-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 48px;
+  align-items: center;
+  padding: 70px 0;
+}
+
+.crx-kicker,
+.crx-section-tag,
+.crx-heading > span {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.crx-kicker {
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 9px 16px;
+  color: #0074ad;
+  background: rgba(0, 116, 173, 0.085);
+  border: 1px solid rgba(0, 116, 173, 0.16);
+  font-size: 14px;
+}
+
+.crx-kicker i {
+  width: 10px;
+  height: 10px;
+  background: #d7194b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba(215, 25, 75, 0.14);
+}
+
+.crx-hero h1,
+.crx-heading h2,
+.crx-life-content h2,
+.crx-apply-content h2 {
+  margin: 0 0 16px;
+  color: #07131c;
+  font-size: clamp(34px, 4.2vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -1.4px;
+  font-weight: 900;
+}
+
+.crx-heading h2,
+.crx-life-content h2,
+.crx-apply-content h2 {
+  font-size: clamp(28px, 3vw, 42px);
+}
+
+.crx-hero h1 span,
+.crx-heading h2 span,
+.crx-life-content h2 span,
+.crx-apply-content h2 span {
+  display: inline;
+  background: linear-gradient(90deg, #d7194b 0%, #8d3b80 46%, #0074ad 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.crx-hero p,
+.crx-heading p,
+.crx-life-content > p,
+.crx-apply-content p {
+  margin: 0;
+  color: #40515d;
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+.crx-hero p {
+  max-width: 660px;
+  margin-bottom: 26px;
+}
+
+.crx-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.crx-btn-primary,
+.crx-btn-light,
+.crx-role-content a,
+.crx-apply-card a {
+  min-height: 50px;
+  padding: 13px 23px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 900;
+  transition: all 0.35s ease;
+}
+
+.crx-btn-primary,
+.crx-role-content a,
+.crx-apply-card a {
+  color: #ffffff;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+  box-shadow: 0 16px 34px rgba(0, 116, 173, 0.2);
+}
+
+.crx-btn-light {
+  color: #07131c;
+  background: #ffffff;
+  border: 1px solid rgba(0, 116, 173, 0.16);
+  box-shadow: 0 14px 28px rgba(0, 80, 125, 0.06);
+}
+
+.crx-btn-primary svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+  transition: transform 0.35s ease;
+}
+
+.crx-btn-primary:hover,
+.crx-btn-light:hover,
+.crx-role-content a:hover,
+.crx-apply-card a:hover {
+  transform: translateY(-4px);
+}
+
+.crx-btn-primary:hover svg {
+  transform: translateX(5px);
+}
+
+.crx-hero-media {
+  position: relative;
+  min-height: 500px;
+}
+
+.crx-main-photo {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 78%;
+  height: 390px;
+  overflow: hidden;
+  border-radius: 34px;
+  box-shadow: 0 24px 60px rgba(0, 80, 125, 0.16);
+}
+
+.crx-main-photo img,
+.crx-mini-photo img,
+.crx-identity-card img,
+.crx-department-card img,
+.crx-role-image img,
+.crx-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s ease;
+}
+
+.crx-main-photo:hover img,
+.crx-mini-photo:hover img,
+.crx-identity-card:hover img,
+.crx-department-card:hover img,
+.crx-role-card:hover .crx-role-image img,
+.crx-gallery img:hover {
+  transform: scale(1.07);
+}
+
+.crx-mini-photo {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 18px 42px rgba(0, 80, 125, 0.14);
+  border: 6px solid #ffffff;
+}
+
+.crx-mini-one {
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 190px;
+}
+
+.crx-mini-two {
+  left: 60px;
+  bottom: 10px;
+  width: 310px;
+  height: 210px;
+}
+
+.crx-hero-badge {
+  position: absolute;
+  right: 34px;
+  bottom: 0;
+  width: 250px;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 116, 173, 0.14);
+  box-shadow: 0 18px 44px rgba(0, 80, 125, 0.13);
+  backdrop-filter: blur(14px);
+}
+
+.crx-hero-badge strong {
+  display: block;
+  color: #07131c;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.crx-hero-badge span {
+  display: block;
+  margin-top: 5px;
+  color: #40515d;
+  font-size: 14px;
+}
+
+.crx-identity,
+.crx-departments,
+.crx-roles,
+.crx-life,
+.crx-apply {
+  padding: 68px 0;
+}
+
+.crx-identity {
+  background: #ffffff;
+}
+
+.crx-identity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.crx-identity-card {
+  overflow: hidden;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 116, 173, 0.1);
+  box-shadow: 0 14px 34px rgba(0, 80, 125, 0.07);
+  transition: all 0.35s ease;
+}
+
+.crx-identity-card:hover,
+.crx-department-card:hover,
+.crx-role-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 54px rgba(0, 80, 125, 0.13);
+}
+
+.crx-identity-card img {
+  height: 230px;
+}
+
+.crx-identity-card div {
+  padding: 22px;
+}
+
+.crx-identity-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: rgba(0, 116, 173, 0.28);
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.crx-identity-card h3,
+.crx-department-card h3,
+.crx-role-content h3,
+.crx-life-points h3,
+.crx-apply-card h3 {
+  margin: 0 0 8px;
+  color: #07131c;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.crx-identity-card p,
+.crx-department-card p,
+.crx-role-content p,
+.crx-life-points p,
+.crx-apply-card p,
+.crx-apply-card small {
+  margin: 0;
+  color: #40515d;
+  font-size: 14px;
+  line-height: 1.56;
+}
+
+.crx-departments,
+.crx-life {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(215, 25, 75, 0.055), transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(0, 116, 173, 0.085), transparent 30%),
+    linear-gradient(180deg, #f8fcff, #ffffff);
+}
+
+.crx-heading {
+  max-width: 800px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.crx-heading > span,
+.crx-section-tag {
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  color: #0074ad;
+  background: rgba(0, 116, 173, 0.085);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.45px;
+}
+
+.crx-department-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.crx-department-card {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #07131c;
+  box-shadow: 0 14px 34px rgba(0, 80, 125, 0.08);
+  transition: all 0.35s ease;
+}
+
+.crx-department-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 19, 28, 0.05), rgba(7, 19, 28, 0.88));
+}
+
+.crx-department-card img {
+  position: absolute;
+  inset: 0;
+}
+
+.crx-department-card div {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2;
+}
+
+.crx-department-card h3,
+.crx-department-card p {
+  color: #ffffff;
+}
+
+.crx-department-card p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.crx-roles {
+  background: #ffffff;
+}
+
+.crx-role-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.crx-role-btn {
+  border: 1px solid rgba(0, 116, 173, 0.16);
+  background: #ffffff;
+  color: #07131c;
+  min-height: 46px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: all 0.35s ease;
+}
+
+.crx-role-btn:hover,
+.crx-role-btn.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+  box-shadow: 0 14px 30px rgba(0, 116, 173, 0.18);
+}
+
+.crx-role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.crx-role-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 116, 173, 0.1);
+  box-shadow: 0 14px 34px rgba(0, 80, 125, 0.07);
+  transition: all 0.35s ease;
+}
+
+.crx-role-card.crx-hide {
+  display: none;
+}
+
+.crx-role-image {
+  overflow: hidden;
+  min-height: 245px;
+}
+
+.crx-role-content {
+  padding: 24px;
+}
+
+.crx-role-content span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(0, 116, 173, 0.085);
+  color: #0074ad;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.crx-role-content p {
+  margin-bottom: 18px;
+}
+
+.crx-role-content a {
+  min-height: 44px;
+  padding: 11px 20px;
+}
+
+.crx-life-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.crx-life-points {
+  display: grid;
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.crx-life-points div {
+  padding: 18px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 116, 173, 0.1);
+  box-shadow: 0 12px 28px rgba(0, 80, 125, 0.06);
+  transition: all 0.35s ease;
+}
+
+.crx-life-points div:hover {
+  transform: translateX(7px);
+  box-shadow: 0 20px 44px rgba(0, 80, 125, 0.1);
+}
+
+.crx-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.crx-gallery img {
+  height: 210px;
+  border-radius: 24px;
+  box-shadow: 0 14px 34px rgba(0, 80, 125, 0.08);
+}
+
+.crx-gallery img:nth-child(2),
+.crx-gallery img:nth-child(3) {
+  transform: translateY(28px);
+}
+
+.crx-apply {
+  background: #ffffff;
+}
+
+.crx-apply-box {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 0.55fr;
+  gap: 36px;
+  align-items: center;
+  padding: 42px;
+  border-radius: 36px;
+  background:
+    linear-gradient(135deg, rgba(7, 19, 28, 0.95), rgba(0, 52, 78, 0.92)),
+    url("../images/pharma-career-cta.jpg");
+  background-size: cover;
+  background-position: center right;
+  box-shadow: 0 24px 58px rgba(0, 80, 125, 0.14);
+}
+
+.crx-apply-content span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.13);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.crx-apply-content h2,
+.crx-apply-content p {
+  color: #ffffff;
+}
+
+.crx-apply-content p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.crx-apply-card {
+  padding: 26px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.crx-apply-card p {
+  margin-bottom: 16px;
+}
+
+.crx-apply-card a {
+  width: 100%;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.crx-apply-card small {
+  display: block;
+}
+
+.crx-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(5px);
+  transition:
+    opacity 0.78s ease,
+    transform 0.78s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.78s ease;
+}
+
+.crx-reveal.crx-show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+@media (max-width: 1100px) {
+  .crx-identity-grid,
+  .crx-department-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .crx-role-card {
+    grid-template-columns: 1fr;
+  }
+
+  .crx-role-image {
+    height: 230px;
+  }
+}
+
+@media (max-width: 991px) {
+  .crx-container {
+    padding: 0 24px;
+  }
+
+  .crx-hero {
+    min-height: auto;
+  }
+
+  .crx-hero-grid,
+  .crx-life-grid,
+  .crx-apply-box {
+    grid-template-columns: 1fr;
+  }
+
+  .crx-hero-media {
+    min-height: 440px;
+  }
+
+  .crx-main-photo {
+    width: 82%;
+    height: 330px;
+  }
+
+  .crx-mini-one {
+    width: 220px;
+    height: 160px;
+  }
+
+  .crx-mini-two {
+    width: 260px;
+    height: 180px;
+  }
+
+  .crx-identity,
+  .crx-departments,
+  .crx-roles,
+  .crx-life,
+  .crx-apply {
+    padding: 54px 0;
+  }
+
+  .crx-role-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .crx-container {
+    padding: 0 16px;
+  }
+
+  .crx-hero-grid {
+    gap: 22px;
+    padding: 56px 0 42px;
+  }
+
+  .crx-hero h1 {
+    font-size: 33px;
+    letter-spacing: -0.7px;
+  }
+
+  .crx-hero p,
+  .crx-heading p,
+  .crx-life-content > p,
+  .crx-apply-content p {
+    font-size: 14px;
+  }
+
+  .crx-hero-actions {
+    flex-direction: column;
+  }
+
+  .crx-btn-primary,
+  .crx-btn-light {
+    width: 100%;
+  }
+
+  .crx-hero-media {
+    min-height: 360px;
+  }
+
+  .crx-main-photo {
+    right: 0;
+    top: 35px;
+    width: 100%;
+    height: 260px;
+    border-radius: 24px;
+  }
+
+  .crx-mini-one {
+    left: 0;
+    top: 0;
+    width: 145px;
+    height: 110px;
+    border-radius: 18px;
+    border-width: 4px;
+  }
+
+  .crx-mini-two {
+    left: 18px;
+    bottom: 0;
+    width: 175px;
+    height: 125px;
+    border-radius: 18px;
+    border-width: 4px;
+  }
+
+  .crx-hero-badge {
+    right: 12px;
+    bottom: 0;
+    width: 190px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .crx-hero-badge strong {
+    font-size: 16px;
+  }
+
+  .crx-identity,
+  .crx-departments,
+  .crx-roles,
+  .crx-life,
+  .crx-apply {
+    padding: 42px 0;
+  }
+
+  .crx-heading h2,
+  .crx-life-content h2,
+  .crx-apply-content h2 {
+    font-size: 27px;
+  }
+
+  .crx-identity-grid,
+  .crx-department-grid,
+  .crx-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .crx-identity-card,
+  .crx-department-card,
+  .crx-role-card {
+    border-radius: 22px;
+  }
+
+  .crx-identity-card img {
+    height: 200px;
+  }
+
+  .crx-department-card {
+    min-height: 280px;
+  }
+
+  .crx-role-tabs {
+    flex-direction: column;
+  }
+
+  .crx-role-btn {
+    width: 100%;
+  }
+
+  .crx-role-content {
+    padding: 20px;
+  }
+
+  .crx-role-image {
+    height: 210px;
+  }
+
+  .crx-gallery img,
+  .crx-gallery img:nth-child(2),
+  .crx-gallery img:nth-child(3) {
+    height: 210px;
+    transform: none;
+  }
+
+  .crx-apply-box {
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
+
+  .crx-apply-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+}
+
+ 

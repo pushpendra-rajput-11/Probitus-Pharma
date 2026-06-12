@@ -1,0 +1,644 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #07131c;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.pcp-container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 34px;
+}
+
+
+/* =========================
+   Banner
+========================= */
+
+.pcp-contact-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #07131c;
+}
+
+.pcp-hero-bg {
+  position: absolute;
+  inset: -8%;
+  background-image: url("../images/connect-with-our-team.png");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.06);
+  will-change: transform;
+}
+
+.pcp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 19, 28, 0.92), rgba(7, 19, 28, 0.66), rgba(7, 19, 28, 0.28)),
+    radial-gradient(circle at 15% 28%, rgba(215, 25, 75, 0.25), transparent 32%),
+    radial-gradient(circle at 85% 24%, rgba(0, 116, 173, 0.34), transparent 36%);
+}
+
+.pcp-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 740px;
+  padding: 100px 0;
+}
+
+.pcp-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  font-size: 14px;
+  font-weight: 900;
+  backdrop-filter: blur(12px);
+}
+
+.pcp-kicker i {
+  width: 10px;
+  height: 10px;
+  background: #d7194b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba(215, 25, 75, 0.22);
+}
+
+.pcp-hero-content h1 {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+  font-weight: 900;
+}
+
+.pcp-hero-content p {
+  margin: 0;
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+
+/* =========================
+   Contact Main
+========================= */
+
+.pcp-contact-main {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(215, 25, 75, 0.055), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(0, 116, 173, 0.09), transparent 30%),
+    linear-gradient(180deg, #f8fcff 0%, #ffffff 100%);
+}
+
+.pcp-contact-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 116, 173, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 116, 173, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.pcp-contact-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.pcp-section-label {
+  display: inline-flex;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(0, 116, 173, 0.085);
+  color: #0074ad;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.pcp-contact-info h2 {
+  margin: 0 0 16px;
+  color: #07131c;
+  font-size: clamp(32px, 3.8vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+  font-weight: 900;
+}
+
+.pcp-contact-info > p {
+  margin: 0 0 30px;
+  color: #40515d;
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.pcp-info-list {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.pcp-info-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border-radius: 24px;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, rgba(215, 25, 75, 0.16), rgba(0, 116, 173, 0.25)) border-box;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 18px 40px rgba(0, 80, 125, 0.08);
+  transition: all 0.35s ease;
+}
+
+.pcp-info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--pcp-x, 50%) var(--pcp-y, 50%), rgba(0, 116, 173, 0.12), transparent 35%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.pcp-info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 58px rgba(0, 80, 125, 0.13);
+}
+
+.pcp-info-card:hover::before {
+  opacity: 1;
+}
+
+.pcp-info-icon {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 28px rgba(0, 116, 173, 0.2);
+}
+
+.pcp-info-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+}
+
+.pcp-info-card div:last-child {
+  position: relative;
+  z-index: 2;
+}
+
+.pcp-info-card h3 {
+  margin: 0 0 5px;
+  color: #07131c;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.pcp-info-card a,
+.pcp-info-card p {
+  margin: 0;
+  color: #40515d;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.pcp-info-card a:hover {
+  color: #d7194b;
+}
+
+.pcp-direct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.pcp-direct-actions a {
+  min-height: 52px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 16px 34px rgba(0, 116, 173, 0.2);
+  transition: all 0.35s ease;
+}
+
+.pcp-direct-actions a:nth-child(2) {
+  color: #07131c;
+  background: #ffffff;
+  border: 1px solid rgba(0, 116, 173, 0.14);
+  box-shadow: 0 14px 30px rgba(0, 80, 125, 0.07);
+}
+
+.pcp-direct-actions a svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.pcp-direct-actions a:hover {
+  transform: translateY(-4px);
+}
+
+
+/* =========================
+   Form
+========================= */
+
+.pcp-form-wrap {
+  position: relative;
+}
+
+.pcp-form-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(215, 25, 75, 0.12), transparent 34%),
+    radial-gradient(circle at 85% 88%, rgba(0, 116, 173, 0.16), transparent 38%);
+  filter: blur(4px);
+}
+
+.pcp-contact-form {
+  position: relative;
+  z-index: 2;
+  padding: 36px;
+  border-radius: 32px;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, rgba(215, 25, 75, 0.24), rgba(0, 116, 173, 0.34)) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 26px 70px rgba(0, 80, 125, 0.13);
+}
+
+.pcp-form-badge {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: rgba(0, 116, 173, 0.085);
+  color: #0074ad;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.pcp-contact-form h2 {
+  margin: 0 0 10px;
+  color: #07131c;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.14;
+  font-weight: 900;
+  letter-spacing: -0.9px;
+}
+
+.pcp-contact-form > p {
+  margin: 0 0 24px;
+  color: #536674;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.pcp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pcp-field {
+  margin-bottom: 17px;
+}
+
+.pcp-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #07131c;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.pcp-field input,
+.pcp-field select,
+.pcp-field textarea {
+  width: 100%;
+  border: 1px solid rgba(0, 116, 173, 0.18);
+  outline: none;
+  border-radius: 16px;
+  background: #f8fcff;
+  color: #07131c;
+  font-size: 15px;
+  padding: 15px 16px;
+  transition: all 0.3s ease;
+}
+
+.pcp-field input,
+.pcp-field select {
+  min-height: 52px;
+}
+
+.pcp-field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.pcp-field input::placeholder,
+.pcp-field textarea::placeholder {
+  color: rgba(64, 81, 93, 0.62);
+}
+
+.pcp-field input:focus,
+.pcp-field select:focus,
+.pcp-field textarea:focus {
+  border-color: rgba(0, 116, 173, 0.45);
+  background: #ffffff;
+  box-shadow: 0 0 0 5px rgba(0, 116, 173, 0.08);
+}
+
+.pcp-submit-btn {
+  width: 100%;
+  min-height: 56px;
+  border: none;
+  border-radius: 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 18px 38px rgba(0, 116, 173, 0.22);
+  transition: all 0.35s ease;
+}
+
+.pcp-submit-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: transform 0.35s ease;
+}
+
+.pcp-submit-btn:hover {
+  transform: translateY(-4px);
+}
+
+.pcp-submit-btn:hover svg {
+  transform: translateX(5px);
+}
+
+.pcp-form-status {
+  min-height: 22px;
+  margin: 14px 0 0 !important;
+  color: #0074ad !important;
+  font-size: 14px !important;
+  font-weight: 800;
+}
+
+
+/* =========================
+   Strip CTA
+========================= */
+
+.pcp-contact-strip {
+  padding: 0 0 100px;
+  background: #ffffff;
+}
+
+.pcp-strip-box {
+  padding: 42px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(215, 25, 75, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 20%, rgba(0, 116, 173, 0.13), transparent 30%),
+    linear-gradient(180deg, #f8fcff, #ffffff);
+  border: 1px solid rgba(0, 116, 173, 0.12);
+  box-shadow: 0 22px 54px rgba(0, 80, 125, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+}
+
+.pcp-strip-box span {
+  display: block;
+  margin-bottom: 8px;
+  color: #0074ad;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pcp-strip-box h2 {
+  margin: 0 0 10px;
+  color: #07131c;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.12;
+  font-weight: 900;
+}
+
+.pcp-strip-box p {
+  margin: 0;
+  max-width: 680px;
+  color: #40515d;
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+.pcp-strip-box a {
+  flex: 0 0 auto;
+  min-height: 54px;
+  padding: 15px 24px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #d7194b, #0074ad);
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 16px 34px rgba(0, 116, 173, 0.2);
+  transition: all 0.35s ease;
+}
+
+.pcp-strip-box a:hover {
+  transform: translateY(-4px);
+}
+
+
+/* =========================
+   Animations
+========================= */
+
+.pcp-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(6px);
+  transition:
+    opacity 0.82s ease,
+    transform 0.82s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.82s ease;
+}
+
+.pcp-reveal.pcp-show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 991px) {
+  .pcp-container {
+    padding: 0 24px;
+  }
+
+  .pcp-contact-hero {
+    min-height: 470px;
+  }
+
+  .pcp-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+
+  .pcp-contact-main {
+    padding: 76px 0;
+  }
+
+  .pcp-strip-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 575px) {
+  .pcp-container {
+    padding: 0 16px;
+  }
+
+  .pcp-contact-hero {
+    min-height: 430px;
+  }
+
+  .pcp-hero-content {
+    padding: 74px 0;
+  }
+
+  .pcp-hero-content h1 {
+    font-size: 36px;
+    letter-spacing: -0.8px;
+  }
+
+  .pcp-hero-content p,
+  .pcp-contact-info > p {
+    font-size: 15px;
+  }
+
+  .pcp-contact-main {
+    padding: 62px 0;
+  }
+
+  .pcp-contact-info h2 {
+    font-size: 31px;
+  }
+
+  .pcp-info-card {
+    padding: 18px;
+    align-items: flex-start;
+  }
+
+  .pcp-info-icon {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .pcp-direct-actions {
+    flex-direction: column;
+  }
+
+  .pcp-direct-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pcp-contact-form {
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
+
+  .pcp-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .pcp-field textarea {
+    min-height: 120px;
+  }
+
+  .pcp-contact-strip {
+    padding-bottom: 30px;
+  }
+
+  .pcp-strip-box {
+    padding: 28px 20px;
+    border-radius: 24px;
+  }
+
+  .pcp-strip-box a {
+    width: 100%;
+    text-align: center;
+  }
+}
