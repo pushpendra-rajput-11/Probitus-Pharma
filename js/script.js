@@ -710,3 +710,51 @@ document.addEventListener("DOMContentLoaded", function () {
   showSlide(0);
   startSlider();
 });
+
+
+
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-nav span');
+
+        let current = 0;
+
+        function showSlide(index) {
+
+            slides.forEach((slide) => {
+                slide.classList.remove('active');
+            });
+
+            dots.forEach((dot) => {
+                dot.classList.remove('active');
+            });
+
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+
+            current = index;
+        }
+
+        /* AUTO SLIDE */
+        setInterval(() => {
+
+            current++;
+
+            if (current >= slides.length) {
+                current = 0;
+            }
+
+            showSlide(current);
+
+        }, 5000);
+
+        /* DOT CLICK */
+        dots.forEach((dot, index) => {
+
+            dot.addEventListener('click', () => {
+
+                showSlide(index);
+
+            });
+
+        });
+  
