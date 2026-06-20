@@ -21,28 +21,22 @@ body {
 
 body {
   font-family: "Source Sans 3", Arial, sans-serif;
-  /* font-weight: 400; */
+  font-weight: 400;
 }
 
-p, li, a {
+p, li, span, a {
   font-family: "Source Sans 3", Arial, sans-serif;
-  /* font-weight: 400; */
+  font-weight: 400;
   /* line-height: 1.7; */
 }
 
 h1, h2, h3, h4, h5, h6,
 .section-heading,
-.hero-heading {
-  font-family: "Bree Serif", Georgia, serif;
-  font-weight: 400;
+.hero-heading,
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+  font-family: "Roboto Slab", Georgia, serif;
+  font-weight: 700;
 }
-h1 span, h2 span, h3 span, h4 span, h5 span, h6 span,
-.section-heading span,
-.hero-heading span {
-  font-family: "Bree Serif", Georgia, serif !important;
-  /* font-weight: 400 !important; */
-}
-
 a {
   text-decoration: none;
 }
@@ -1129,7 +1123,7 @@ ul {
   margin-bottom: 18px;
   font-size: clamp(42px, 5vw, 72px);
   line-height: 1.02;
-  letter-spacing: -2px;
+  /* letter-spacing: -2px; */
   font-weight: 900;
   color: #07131c;
 }
@@ -1145,7 +1139,7 @@ ul {
   padding: 0;
   font-size: clamp(46px, 5.2vw, 65px);
   line-height: 1.12;
-  letter-spacing: -2px;
+  /* letter-spacing: -2px; */
   font-weight: 900;
   color: #07131c;
   overflow: visible;
