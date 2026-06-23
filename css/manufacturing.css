@@ -58,7 +58,7 @@ a {
   /* background-image:
     linear-gradient(rgba(0, 116, 173, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 116, 173, 0.045) 1px, transparent 1px); */
-  background-size: 42px 42px;
+  /* background-size: 42px 42px; */
 }
 
 .mpg-hero-content {

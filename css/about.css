@@ -37,7 +37,7 @@ button {
 .abt-hero-bg {
   position: absolute;
   inset: -8%;
-  background-image: url("../images/commited-to-quality.png");
+  background-image: url("../images/about-hero.png");
   background-size: cover;
   background-position: center;
   transform: scale(1.06);
@@ -47,32 +47,34 @@ button {
 .abt-hero-overlay {
   position: absolute;
   inset: 0;
-  background:
+  /* background:
     linear-gradient(90deg, rgba(7, 19, 28, 0.92), rgba(7, 19, 28, 0.66), rgba(7, 19, 28, 0.28)),
     radial-gradient(circle at 15% 30%, rgba(215, 25, 75, 0.25), transparent 32%),
-    radial-gradient(circle at 82% 25%, rgba(0, 116, 173, 0.35), transparent 34%);
+    radial-gradient(circle at 82% 25%, rgba(0, 116, 173, 0.35), transparent 34%); */
 }
-
 .abt-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 780px;
-  padding: 100px 0;
+  max-width: 760px;
+  padding: 82px 0;
+}
+
+.abt-kicker,
+.abt-section-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-weight: 900;
 }
 
 .abt-kicker {
-  display: inline-flex;
-  align-items: center;
   gap: 10px;
   margin-bottom: 18px;
   padding: 9px 16px;
-  border-radius: 999px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.13);
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #0074ad;
+  background: rgba(0, 116, 173, 0.085);
+  border: 1px solid rgba(0, 116, 173, 0.16);
   font-size: 14px;
-  font-weight: 900;
-  backdrop-filter: blur(12px);
 }
 
 .abt-kicker i {
@@ -80,12 +82,13 @@ button {
   height: 10px;
   background: #d7194b;
   border-radius: 50%;
-  box-shadow: 0 0 0 7px rgba(215, 25, 75, 0.22);
+  box-shadow: 0 0 0 7px rgba(215, 25, 75, 0.14);
 }
+
 
 .abt-hero h1 {
   margin: 0 0 18px;
-  color: #ffffff;
+  color: #000000;
   font-size: clamp(38px, 5vw, 66px);
   line-height: 1.05;
   letter-spacing: -1.7px;
@@ -95,7 +98,7 @@ button {
 .abt-hero p {
   max-width: 650px;
   margin: 0 0 30px;
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(0, 0, 0, 0.84);
   font-size: 17px;
   line-height: 1.7;
 }
@@ -104,6 +107,21 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+}
+
+.abt-hero-span {
+  /* display: block; */
+  background: linear-gradient(90deg, #d7194b 0%, #8d3b80 46%, #0074ad 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.abt-heading h2 span {
+  background: linear-gradient(90deg, #d7194b 0%, #8d3b80 46%, #0074ad 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .abt-primary-btn,
@@ -129,8 +147,8 @@ button {
 }
 
 .abt-secondary-btn {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
+  color: #000000;
+  background: rgb(255, 255, 255);
   border: 1px solid rgba(255, 255, 255, 0.28);
   backdrop-filter: blur(12px);
 }

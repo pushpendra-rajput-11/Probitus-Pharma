@@ -2,8 +2,6 @@
    Global CSS
 ========================= */
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -15,28 +13,11 @@ html {
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   background: #ffffff;
   color: #101010;
 }
 
-body {
-  font-family: "Source Sans 3", Arial, sans-serif;
-  font-weight: 400;
-}
-
-p, li, span, a {
-  font-family: "Source Sans 3", Arial, sans-serif;
-  font-weight: 400;
-  /* line-height: 1.7; */
-}
-
-h1, h2, h3, h4, h5, h6,
-.section-heading,
-.hero-heading,
-h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
-  font-family: "Roboto Slab", Georgia, serif;
-  font-weight: 700;
-}
 a {
   text-decoration: none;
 }
@@ -1123,7 +1104,7 @@ ul {
   margin-bottom: 18px;
   font-size: clamp(42px, 5vw, 72px);
   line-height: 1.02;
-  /* letter-spacing: -2px; */
+  letter-spacing: -2px;
   font-weight: 900;
   color: #07131c;
 }
@@ -1139,7 +1120,7 @@ ul {
   padding: 0;
   font-size: clamp(46px, 5.2vw, 65px);
   line-height: 1.12;
-  /* letter-spacing: -2px; */
+  letter-spacing: -2px;
   font-weight: 900;
   color: #07131c;
   overflow: visible;
@@ -5047,7 +5028,7 @@ ul {
   position: relative;
   z-index: 2;
   width: min(980px, calc(100% - 32px));
-  max-height: calc(100vh - 40px);
+  max-height: calc(100vh - 80px);
   overflow-y: auto;
   margin: 20px auto;
   top: 50%;
@@ -5789,7 +5770,7 @@ ul {
       color: #ffffff;
       font-size: 14px;
       font-weight: 800;
-      /* font-family: 'Plus Jakarta Sans', Arial, sans-serif !important; */
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif !important;
       backdrop-filter: blur(12px);
     }
 
@@ -5809,7 +5790,7 @@ ul {
       margin: 0 0 20px;
       font-weight: 900;
       letter-spacing: -1.4px;
-      /* font-family: 'Varela Round', Arial, sans-serif !important; */
+      font-family: 'Varela Round', Arial, sans-serif !important;
     }
 
     .text-box h1 span {
@@ -5824,7 +5805,7 @@ ul {
       line-height: 1.7;
       margin: 0 0 32px;
       font-weight: 500;
-      /* font-family: 'Plus Jakarta Sans', Arial, sans-serif !important; */
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif !important;
     }
 
     /* BUTTONS */
@@ -5849,7 +5830,7 @@ ul {
       font-weight: 900;
       text-decoration: none;
       transition: all 0.35s ease;
-      /* font-family: 'Plus Jakarta Sans', Arial, sans-serif !important; */
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif !important;
     }
 
     .hero-btn-primary {
@@ -6013,3 +5994,31 @@ ul {
         align-items: center;
       }
     }
+
+
+
+    .mpg-kicker,
+.mpg-section-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.mpg-kicker {
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 9px 16px;
+  color: #0074ad;
+  background: rgba(0, 116, 173, 0.085);
+  border: 1px solid rgba(0, 116, 173, 0.16);
+  font-size: 14px;
+}
+
+.mpg-kicker i {
+  width: 10px;
+  height: 10px;
+  background: #d7194b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba(215, 25, 75, 0.14);
+}

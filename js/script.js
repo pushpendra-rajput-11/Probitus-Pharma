@@ -337,7 +337,7 @@ pbCertRevealItems.forEach(function (item) {
 
 const pbProductData = {
   "rich-pcos": {
-    image: "assets/rich-pcos-transparent-clean.png",
+    image: "images/rich-pcos.png",
     imageAlt: "RICH-PCOS Product",
     category: "Women’s Health / PCOS Support",
     title: "RICH-PCOS",
@@ -365,7 +365,7 @@ const pbProductData = {
   },
 
   probizasta: {
-    image: "assets/probizasta-200-sr-transparent-clean.png",
+    image: "images/probizasta-200-sr.png",
     imageAlt: "Probizasta-200 SR Product",
     category: "Women’s Health / Progesterone Support",
     title: "Probizasta-200 SR",
@@ -385,7 +385,7 @@ const pbProductData = {
   },
 
   "life-nest": {
-    image: "assets/life-nest-f-transparent-clean.png",
+    image: "images/life-nest-f.png",
     imageAlt: "Life Nest-F Product",
     category: "Female Fertility Support",
     title: "Life Nest-F",
@@ -417,7 +417,7 @@ const pbProductData = {
   },
 
   "stop-nvp": {
-    image: "assets/stop-nvp-transparent-clean.png",
+    image: "images/stop-nvp.png",
     imageAlt: "STOP-NVP Product",
     category: "Pregnancy Care",
     title: "STOP-NVP",
@@ -439,7 +439,7 @@ const pbProductData = {
   },
 
   "guid-mag": {
-    image: "assets/guid-mag-transparent-clean.png",
+    image: "images/guid-mag.png",
     imageAlt: "Guid-MAG Product",
     category: "Pregnancy / Metabolic / Bone & Muscle Support",
     title: "Guid-MAG",
@@ -462,7 +462,7 @@ const pbProductData = {
   },
 
   seratus: {
-    image: "assets/seratus-transparent-clean.png",
+    image: "images/seratus.png",
     imageAlt: "Seratus Product",
     category: "Joint Care / Mobility Support",
     title: "Seratus",
